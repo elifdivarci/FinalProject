@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.AnaSayfa"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+           
+           <Grid Grid.Row="0" 
+                 Padding="20" 
+                 Margin="0,40,0,20"
+                 ColumnDefinitions="*,*,*"
+                 RowDefinitions="Auto">
+               
+            <Frame Grid.Column="0"
+                   WidthRequest="110" 
+                   HeightRequest="110" 
+                   CornerRadius="55" 
+                   BorderColor="#27AE60"
+                   HasShadow="True"
+                   BackgroundColor="White"
+                   Padding="0"
+                   HorizontalOptions="Center">
+                <VerticalStackLayout VerticalOptions="Center" 
+                                   HorizontalOptions="Center"
+                                   Spacing="5">
+                    <Label x:Name="LabelAlinanKalori"
+                           Text="0"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="#27AE60"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Alınan"
+                           FontSize="12"
+                           TextColor="#7F8C8D"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <Frame Grid.Column="1"
+                   WidthRequest="140" 
+                   HeightRequest="140" 
+                   CornerRadius="70" 
+                   BorderColor="#3498DB"
+                   HasShadow="True"
+                   BackgroundColor="White"
+                   Padding="0"
+                   HorizontalOptions="Center">
+                <VerticalStackLayout VerticalOptions="Center" 
+                                   HorizontalOptions="Center"
+                                   Spacing="5">
+                    <Label x:Name="LabelKalanKalori"
+                           Text="1061"
+                           FontSize="38"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Kalan"
+                           FontSize="14"
+                           TextColor="#7F8C8D"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <Frame Grid.Column="2"
+                   WidthRequest="110" 
+                   HeightRequest="110" 
+                   CornerRadius="55" 
+                   BorderColor="#E74C3C"
+                   HasShadow="True"
+                   BackgroundColor="White"
+                   Padding="0"
+                   HorizontalOptions="Center">
+                <VerticalStackLayout VerticalOptions="Center" 
+                                   HorizontalOptions="Center"
+                                   Spacing="5">
+                    <Label x:Name="LabelYakilanKalori"
+                           Text="0"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="#E74C3C"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Yakılan"
+                           FontSize="12"
+                           TextColor="#7F8C8D"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+        </Grid>
+        
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="15">
+                
+                <!-- Kahvaltı -->
+                <Frame BackgroundColor="White" 
+                       CornerRadius="15" 
+                       HasShadow="True"
+                       Padding="15">
+                    <Grid ColumnDefinitions="*,Auto,Auto" 
+                          RowDefinitions="Auto,Auto"
+                          ColumnSpacing="15"
+                          RowSpacing="10">
+                        
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Kahvaltı"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"
+                               VerticalOptions="Center"/>
+                        
+                        <Label Grid.Row="1" Grid.Column="0"
+                               x:Name="LabelKahvaltiKalori"
+                               Text="0 kcal"
+                               FontSize="16"
+                               TextColor="#7F8C8D"
+                               VerticalOptions="Center"/>
+                        
+                        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                               Source="cheese.png"
+                               WidthRequest="80"
+                               HeightRequest="80"
+                               Aspect="AspectFit"/>
+                        
+                        <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                                Text="+"
+                                FontSize="32"
+                                WidthRequest="60"
+                                HeightRequest="60"
+                                CornerRadius="30"
+                                BackgroundColor="#3498DB"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                Clicked="OnKahvaltiClicked"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Öğle -->
+                <Frame BackgroundColor="White" 
+                       CornerRadius="15" 
+                       HasShadow="True"
+                       Padding="15">
+                    <Grid ColumnDefinitions="*,Auto,Auto" 
+                          RowDefinitions="Auto,Auto"
+                          ColumnSpacing="15"
+                          RowSpacing="10">
+                        
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Öğle"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"
+                               VerticalOptions="Center"/>
+                        
+                        <Label Grid.Row="1" Grid.Column="0"
+                               x:Name="LabelOgleKalori"
+                               Text="0 kcal"
+                               FontSize="16"
+                               TextColor="#7F8C8D"
+                               VerticalOptions="Center"/>
+                        
+                        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                               Source="soup.png"
+                               WidthRequest="80"
+                               HeightRequest="80"
+                               Aspect="AspectFit"/>
+                        
+                        <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                                Text="+"
+                                FontSize="32"
+                                WidthRequest="60"
+                                HeightRequest="60"
+                                CornerRadius="30"
+                                BackgroundColor="#3498DB"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                Clicked="OnOgleClicked"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Akşam -->
+                <Frame BackgroundColor="White" 
+                       CornerRadius="15" 
+                       HasShadow="True"
+                       Padding="15">
+                    <Grid ColumnDefinitions="*,Auto,Auto" 
+                          RowDefinitions="Auto,Auto"
+                          ColumnSpacing="15"
+                          RowSpacing="10">
+                        
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Akşam"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"
+                               VerticalOptions="Center"/>
+                        
+                        <Label Grid.Row="1" Grid.Column="0"
+                               x:Name="LabelAksamKalori"
+                               Text="0 kcal"
+                               FontSize="16"
+                               TextColor="#7F8C8D"
+                               VerticalOptions="Center"/>
+                        
+                        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                               Source="dinner.png"
+                               WidthRequest="80"
+                               HeightRequest="80"
+                               Aspect="AspectFit"/>
+                        
+                        <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                                Text="+"
+                                FontSize="32"
+                                WidthRequest="60"
+                                HeightRequest="60"
+                                CornerRadius="30"
+                                BackgroundColor="#3498DB"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                Clicked="OnAksamClicked"/>
+                    </Grid>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <Grid Grid.Row="2" 
+              BackgroundColor="White" 
+              HeightRequest="70"
+              ColumnDefinitions="*,*"
+              Padding="10,5">
+            
+            <VerticalStackLayout Grid.Column="0" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Spacing="5">
+                <Image Source="home_icon.png" 
+                       WidthRequest="30" 
+                       HeightRequest="30"/>
+                <Label Text="Ana Sayfa" 
+                       FontSize="12" 
+                       TextColor="#3498DB"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Spacing="5">
+                <Image Source="profile_icon.png" 
+                       WidthRequest="30" 
+                       HeightRequest="30"/>
+                <Label Text="Profil" 
+                       FontSize="12" 
+                       TextColor="#7F8C8D"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+            
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

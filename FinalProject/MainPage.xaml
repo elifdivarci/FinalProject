@@ -104,7 +104,21 @@
                 HeightRequest="55"
                 Margin="0,30,0,0"
                 Clicked="OnHesaplaClicked"/>
-
+            
+            <Button 
+                x:Name="BtnDevamEt"
+                Text="Devam Et"
+                FontSize="20"
+                FontAttributes="Bold"
+                BackgroundColor="#27AE60"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="55"
+                Margin="0,20,0,0"
+                IsVisible="False"
+                Clicked="OnDevamEtClicked"/>
+            
+            
         </VerticalStackLayout>
     </ScrollView>
 

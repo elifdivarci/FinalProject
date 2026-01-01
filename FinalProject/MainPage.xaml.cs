@@ -6,6 +6,7 @@ namespace FinalProject
     public partial class MainPage : ContentPage
     {
         private DbService _dbService;
+        private double _hesaplananBMH;
 
         public MainPage()
         {
@@ -16,6 +17,7 @@ namespace FinalProject
         private async void OnHesaplaClicked(object sender, EventArgs e)
         {
             LabelSonuc.IsVisible = false;
+            BtnDevamEt.IsVisible = false;
             
             if (!RadioKadin.IsChecked && !RadioErkek.IsChecked)
             {
@@ -53,8 +55,11 @@ namespace FinalProject
                 bmh = 655.10 + (9.56 * kilo) + (1.85 * boy) - (4.68 * yas);
             }
             
+            _hesaplananBMH = bmh;
+            
             LabelSonuc.Text = $"Bazal Metabolik Hızınız: {bmh:F2} kalori/gün";
             LabelSonuc.IsVisible = true;
+            BtnDevamEt.IsVisible = true;
             
             var veri = new Veri
             {
@@ -67,6 +72,11 @@ namespace FinalProject
             };
 
             await _dbService.SaveVeriAsync(veri);
+        }
+
+        private async void OnDevamEtClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AnaSayfa(_hesaplananBMH));
         }
     }
 }
