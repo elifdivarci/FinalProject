@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.MainPage"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25">
+            <Label 
+                Text="Deneme Uygulaması"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#2C3E50"
+                Margin="0,20,0,40"/>
+            
+            <VerticalStackLayout Spacing="10">
+                <Label 
+                    Text="Cinsiyetiniz"
+                    FontSize="18"
+                    TextColor="#34495E"
+                    FontAttributes="Bold"/>
+                
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Start">
+                    <RadioButton 
+                        x:Name="RadioKadin"
+                        Content="Kadın"
+                        GroupName="Cinsiyet"
+                        FontSize="16"
+                        TextColor="#555"/>
+                    <RadioButton 
+                        x:Name="RadioErkek"
+                        Content="Erkek"
+                        GroupName="Cinsiyet"
+                        FontSize="16"
+                        TextColor="#555"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Spacing="10">
+                <Label 
+                    Text="Yaşınız"
+                    FontSize="18"
+                    TextColor="#34495E"
+                    FontAttributes="Bold"/>
+                <Entry 
+                    x:Name="EntryYas"
+                    Placeholder="Yaşınızı girin"
+                    Keyboard="Numeric"
+                    FontSize="16"
+                    BackgroundColor="White"
+                    PlaceholderColor="#95A5A6"/>
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Spacing="10">
+                <Label 
+                    Text="Boyunuz (cm)"
+                    FontSize="18"
+                    TextColor="#34495E"
+                    FontAttributes="Bold"/>
+                <Entry 
+                    x:Name="EntryBoy"
+                    Placeholder="Boyunuzu cm cinsinden girin"
+                    Keyboard="Numeric"
+                    FontSize="16"
+                    BackgroundColor="White"
+                    PlaceholderColor="#95A5A6"/>
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Spacing="10">
+                <Label 
+                    Text="Kilonuz (kg)"
+                    FontSize="18"
+                    TextColor="#34495E"
+                    FontAttributes="Bold"/>
+                <Entry 
+                    x:Name="EntryKilo"
+                    Placeholder="Kilonuzu kg cinsinden girin"
+                    Keyboard="Numeric"
+                    FontSize="16"
+                    BackgroundColor="White"
+                    PlaceholderColor="#95A5A6"/>
+            </VerticalStackLayout>
+
+            <Label 
+                x:Name="LabelSonuc"
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#27AE60"
+                Margin="0,20,0,0"
+                IsVisible="False"/>
+            
+            <Button 
+                x:Name="BtnHesapla"
+                Text="Hesapla"
+                FontSize="20"
+                FontAttributes="Bold"
+                BackgroundColor="#3498DB"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="55"
+                Margin="0,30,0,0"
+                Clicked="OnHesaplaClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
