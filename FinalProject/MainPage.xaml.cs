@@ -7,11 +7,41 @@ namespace FinalProject
     {
         private DbService _dbService;
         private double _hesaplananBMH;
+        private Veri _mevcutVeri;
 
         public MainPage()
         {
             InitializeComponent();
             _dbService = new DbService();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await KayitliVeriyiYukle();
+        }
+
+        private async Task KayitliVeriyiYukle()
+        {
+            _mevcutVeri = await _dbService.GetSonVeriAsync();
+            
+            if (_mevcutVeri != null)
+            {
+                if (_mevcutVeri.Cinsiyet == "Kadın")
+                    RadioKadin.IsChecked = true;
+                else
+                    RadioErkek.IsChecked = true;
+                
+                EntryYas.Text = _mevcutVeri.Yas.ToString();
+                EntryBoy.Text = _mevcutVeri.Boy.ToString();
+                EntryKilo.Text = _mevcutVeri.Kilo.ToString();
+                
+                _hesaplananBMH = _mevcutVeri.BMH;
+                
+                LabelSonuc.Text = $"Bazal Metabolik Hızınız: {_mevcutVeri.BMH:F2} kalori/gün";
+                LabelSonuc.IsVisible = true;
+                BtnDevamEt.IsVisible = true;
+            }
         }
 
         private async void OnHesaplaClicked(object sender, EventArgs e)
@@ -61,17 +91,29 @@ namespace FinalProject
             LabelSonuc.IsVisible = true;
             BtnDevamEt.IsVisible = true;
             
-            var veri = new Veri
+            if (_mevcutVeri != null)
             {
-                Cinsiyet = cinsiyet,
-                Yas = yas,
-                Boy = boy,
-                Kilo = kilo,
-                BMH = bmh,
-                KayitTarihi = DateTime.Now
-            };
+                _mevcutVeri.Cinsiyet = cinsiyet;
+                _mevcutVeri.Yas = yas;
+                _mevcutVeri.Boy = boy;
+                _mevcutVeri.Kilo = kilo;
+                _mevcutVeri.BMH = bmh;
+                _mevcutVeri.KayitTarihi = DateTime.Now;
+            }
+            else
+            {
+                _mevcutVeri = new Veri
+                {
+                    Cinsiyet = cinsiyet,
+                    Yas = yas,
+                    Boy = boy,
+                    Kilo = kilo,
+                    BMH = bmh,
+                    KayitTarihi = DateTime.Now
+                };
+            }
 
-            await _dbService.SaveVeriAsync(veri);
+            await _dbService.SaveVeriAsync(_mevcutVeri);
         }
 
         private async void OnDevamEtClicked(object sender, EventArgs e)
