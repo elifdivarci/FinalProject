@@ -1,216 +1,304 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinalProject.AnaSayfa"
-             BackgroundColor="#F5F5F5">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FinalProject.AnaSayfa"
+    BackgroundColor="#F5F5F5">
 
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         
-        <Frame Grid.Row="0" 
-               BackgroundColor="White" 
-               Margin="20,20,20,10"
-               CornerRadius="15"
-               HasShadow="True"
-               Padding="15">
-            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
-                <Image Source="calendar_icon.png" 
-                       WidthRequest="30" 
-                       HeightRequest="30"
-                       VerticalOptions="Center"/>
-                <Label x:Name="LabelSecilenTarih"
-                       Text="3 Ocak 2026"
-                       FontSize="18"
-                       FontAttributes="Bold"
-                       TextColor="#2C3E50"
-                       VerticalOptions="Center"/>
+        <Frame
+            Grid.Row="0"
+            BackgroundColor="White"
+            Margin="20,20,20,10"
+            CornerRadius="15"
+            HasShadow="True"
+            Padding="15">
+
+            <HorizontalStackLayout
+                Spacing="15"
+                HorizontalOptions="Center">
+
+                <Image
+                    Source="calendar_icon.png"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    VerticalOptions="Center" />
+
+                <Label
+                    x:Name="LabelSecilenTarih"
+                    Text="3 Ocak 2026"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    TextColor="#2C3E50"
+                    VerticalOptions="Center" />
             </HorizontalStackLayout>
         </Frame>
         
-        <Grid Grid.Row="1" 
-              Padding="20,10" 
-              ColumnDefinitions="*,*,*"
-              RowDefinitions="Auto">
+        <Grid
+            Grid.Row="1"
+            Padding="20,10"
+            ColumnDefinitions="*,*,*"
+            RowDefinitions="Auto">
             
-            <Frame Grid.Column="0"
-                   WidthRequest="110" 
-                   HeightRequest="110" 
-                   CornerRadius="55" 
-                   BorderColor="#27AE60"
-                   HasShadow="True"
-                   BackgroundColor="White"
-                   Padding="0"
-                   HorizontalOptions="Center">
-                <VerticalStackLayout VerticalOptions="Center" 
-                                   HorizontalOptions="Center"
-                                   Spacing="5">
-                    <Label x:Name="LabelAlinanKalori"
-                           Text="0"
-                           FontSize="28"
-                           FontAttributes="Bold"
-                           TextColor="#27AE60"
-                           HorizontalOptions="Center"/>
-                    <Label Text="Alınan"
-                           FontSize="12"
-                           TextColor="#7F8C8D"
-                           HorizontalOptions="Center"/>
+            <Frame
+                Grid.Column="0"
+                WidthRequest="110"
+                HeightRequest="110"
+                CornerRadius="55"
+                BorderColor="LawnGreen"
+                HasShadow="True"
+                BackgroundColor="White"
+                Padding="0"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Spacing="5">
+
+                    <Label
+                        x:Name="LabelAlinanKalori"
+                        Text="0"
+                        FontSize="28"
+                        FontAttributes="Bold"
+                        TextColor="LawnGreen"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Alınan"
+                        FontSize="12"
+                        TextColor="#7F8C8D"
+                        HorizontalOptions="Center" />
                 </VerticalStackLayout>
             </Frame>
             
-            <Frame Grid.Column="1"
-                   WidthRequest="140" 
-                   HeightRequest="140" 
-                   CornerRadius="70" 
-                   BorderColor="#3498DB"
-                   HasShadow="True"
-                   BackgroundColor="White"
-                   Padding="0"
-                   HorizontalOptions="Center">
-                <VerticalStackLayout VerticalOptions="Center" 
-                                   HorizontalOptions="Center"
-                                   Spacing="5">
-                    <Label x:Name="LabelKalanKalori"
-                           Text="0"
-                           FontSize="38"
-                           FontAttributes="Bold"
-                           TextColor="#2C3E50"
-                           HorizontalOptions="Center"/>
-                    <Label Text="Kalan"
-                           FontSize="14"
-                           TextColor="#7F8C8D"
-                           HorizontalOptions="Center"/>
+            <Frame
+                Grid.Column="1"
+                WidthRequest="140"
+                HeightRequest="140"
+                CornerRadius="70"
+                BorderColor="DodgerBlue"
+                HasShadow="True"
+                BackgroundColor="White"
+                Padding="0"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Spacing="5">
+
+                    <Label
+                        x:Name="LabelKalanKalori"
+                        Text="0"
+                        FontSize="38"
+                        FontAttributes="Bold"
+                        TextColor="DodgerBlue"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Kalan"
+                        FontSize="14"
+                        TextColor="#7F8C8D"
+                        HorizontalOptions="Center" />
                 </VerticalStackLayout>
             </Frame>
             
-            <Frame Grid.Column="2"
-                   WidthRequest="110" 
-                   HeightRequest="110" 
-                   CornerRadius="55" 
-                   BorderColor="#E74C3C"
-                   HasShadow="True"
-                   BackgroundColor="White"
-                   Padding="0"
-                   HorizontalOptions="Center">
-                <VerticalStackLayout VerticalOptions="Center" 
-                                   HorizontalOptions="Center"
-                                   Spacing="5">
-                    <Label x:Name="LabelYakilanKalori"
-                           Text="0"
-                           FontSize="28"
-                           FontAttributes="Bold"
-                           TextColor="#E74C3C"
-                           HorizontalOptions="Center"/>
-                    <Label Text="Yakılan"
-                           FontSize="12"
-                           TextColor="#7F8C8D"
-                           HorizontalOptions="Center"/>
+            <Frame
+                Grid.Column="2"
+                WidthRequest="110"
+                HeightRequest="110"
+                CornerRadius="55"
+                BorderColor="DarkRed"
+                HasShadow="True"
+                BackgroundColor="White"
+                Padding="0"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Spacing="5">
+
+                    <Label
+                        x:Name="LabelYakilanKalori"
+                        Text="0"
+                        FontSize="28"
+                        FontAttributes="Bold"
+                        TextColor="DarkRed"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Adımlar"
+                        FontSize="12"
+                        TextColor="#7F8C8D"
+                        HorizontalOptions="Center" />
                 </VerticalStackLayout>
             </Frame>
-            
+
         </Grid>
-        
+
+        <!-- GRAFİK -->
         <ScrollView Grid.Row="2">
-            <VerticalStackLayout Padding="20,0,20,20" Spacing="15">
-                
-                <Frame BackgroundColor="White"
-                       CornerRadius="15"
-                       HasShadow="True"
-                       Padding="20">
+            <VerticalStackLayout
+                Padding="20,0,20,20"
+                Spacing="15">
+
+                <Frame
+                    BackgroundColor="White"
+                    CornerRadius="15"
+                    HasShadow="True"
+                    Padding="20">
+
                     <VerticalStackLayout Spacing="15">
-                        <Label Text="Haftalık Kalori Grafiği"
-                               FontSize="18"
-                               FontAttributes="Bold"
-                               TextColor="#2C3E50"/>
-                        
-                        <Grid x:Name="GrafikGrid"
-                              HeightRequest="150"
-                              ColumnDefinitions="Auto,*"
-                              RowDefinitions="*,Auto">
-                            
-                            <VerticalStackLayout Grid.Column="0" Grid.Row="0"
-                                               Spacing="0"
-                                               VerticalOptions="Fill"
-                                               Margin="0,0,10,0">
-                                <Label x:Name="LabelMaxKalori" Text="2000" FontSize="10" TextColor="#7F8C8D"/>
-                                <BoxView HeightRequest="1"/>
-                                <Label Text=" " FontSize="10"/>
-                                <BoxView HeightRequest="1"/>
-                                <Label x:Name="LabelMinKalori" Text="0" FontSize="10" TextColor="#7F8C8D"/>
+
+                        <Label
+                            Text="Haftalık Kalori Grafiği"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="#2C3E50" />
+
+                        <Grid
+                            x:Name="GrafikGrid"
+                            HeightRequest="150"
+                            ColumnDefinitions="Auto,*"
+                            RowDefinitions="*,Auto">
+
+                            <VerticalStackLayout
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Spacing="0"
+                                VerticalOptions="Fill"
+                                Margin="0,0,10,0">
+
+                                <Label
+                                    x:Name="LabelMaxKalori"
+                                    Text="2000"
+                                    FontSize="10"
+                                    TextColor="#7F8C8D" />
+
+                                <BoxView HeightRequest="1" />
+                                <Label Text=" " FontSize="10" />
+                                <BoxView HeightRequest="1" />
+
+                                <Label
+                                    x:Name="LabelMinKalori"
+                                    Text="0"
+                                    FontSize="10"
+                                    TextColor="#7F8C8D" />
                             </VerticalStackLayout>
-                            
-                            <Grid x:Name="CubukGrid"
-                                  Grid.Column="1"
-                                  Grid.Row="0"
-                                  ColumnDefinitions="*,*,*,*,*,*,*"
-                                  RowDefinitions="Auto,*"
-                                  Padding="5">
-                            </Grid>
-                            
-                            <Grid x:Name="GunlerGrid"
-                                  Grid.Column="1"
-                                  Grid.Row="1"
-                                  ColumnDefinitions="*,*,*,*,*,*,*"
-                                  Margin="5,5,5,0">
-                            </Grid>
+
+                            <Grid
+                                x:Name="CubukGrid"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                ColumnDefinitions="*,*,*,*,*,*,*"
+                                RowDefinitions="Auto,*"
+                                Padding="5" />
+
+                            <Grid
+                                x:Name="GunlerGrid"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                ColumnDefinitions="*,*,*,*,*,*,*"
+                                Margin="5,5,5,0" />
                         </Grid>
                     </VerticalStackLayout>
                 </Frame>
-
             </VerticalStackLayout>
         </ScrollView>
         
-        <Grid Grid.Row="3" 
-              BackgroundColor="White" 
-              HeightRequest="70"
-              ColumnDefinitions="*,*,*"
-              Padding="10,5">
+        <Grid
+            Grid.Row="3"
+            BackgroundColor="White"
+            HeightRequest="70"
+            ColumnDefinitions="*,*,*,*"
+            Padding="10,5">
             
-            <VerticalStackLayout Grid.Column="0" 
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               Spacing="5">
-                <Image Source="home_icon.png" 
-                       WidthRequest="30" 
-                       HeightRequest="30"/>
-                <Label Text="Ana Sayfa" 
-                       FontSize="12" 
-                       TextColor="#3498DB"
-                       HorizontalOptions="Center"/>
+            <VerticalStackLayout
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Spacing="5">
+
+                <Image
+                    Source="home_icon.png"
+                    WidthRequest="30"
+                    HeightRequest="30" />
+
+                <Label
+                    Text="Ana Sayfa"
+                    FontSize="12"
+                    TextColor="#3498DB"
+                    HorizontalOptions="Center" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout Grid.Column="1" 
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               Spacing="5">
+            <VerticalStackLayout
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Spacing="5">
                 <VerticalStackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnOgunlerClicked"/>
+                    <TapGestureRecognizer Tapped="OnOgunlerClicked" />
                 </VerticalStackLayout.GestureRecognizers>
-                <Image Source="dinner.png" 
-                       WidthRequest="30" 
-                       HeightRequest="30"/>
-                <Label Text="Öğünler" 
-                       FontSize="12" 
-                       TextColor="#7F8C8D"
-                       HorizontalOptions="Center"/>
-            </VerticalStackLayout>
 
-            <VerticalStackLayout Grid.Column="2" 
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               Spacing="5">
-                <VerticalStackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnYakilanClicked"/>
-                </VerticalStackLayout.GestureRecognizers>
-                <Image Source="profile_icon.png" 
-                       WidthRequest="30" 
-                       HeightRequest="30"/>
-                <Label Text="Yakılan" 
-                       FontSize="12" 
-                       TextColor="#7F8C8D"
-                       HorizontalOptions="Center"/>
+                <Image
+                    Source="dinner.png"
+                    WidthRequest="30"
+                    HeightRequest="30" />
+
+                <Label
+                    Text="Öğünler"
+                    FontSize="12"
+                    TextColor="#7F8C8D"
+                    HorizontalOptions="Center" />
             </VerticalStackLayout>
             
+            <VerticalStackLayout
+                Grid.Column="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Spacing="5">
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnYakilanClicked" />
+                </VerticalStackLayout.GestureRecognizers>
+
+                <Image
+                    Source="kosan_adam.png"
+                    WidthRequest="30"
+                    HeightRequest="30" />
+
+                <Label
+                    Text="Yakılan"
+                    FontSize="12"
+                    TextColor="#7F8C8D"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout
+                Grid.Column="3"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Spacing="5">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfilClicked" />
+                </VerticalStackLayout.GestureRecognizers>
+
+                <Image
+                    Source="profile_icon.png"
+                    WidthRequest="30"
+                    HeightRequest="30" />
+
+                <Label
+                    Text="Profil"
+                    FontSize="12"
+                    TextColor="#7F8C8D"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
         </Grid>
 
     </Grid>
-
 </ContentPage>

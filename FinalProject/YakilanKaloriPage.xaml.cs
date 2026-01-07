@@ -25,11 +25,11 @@ namespace FinalProject
         private async Task BugunkuVeriYukle()
         {
             var tarihStr = DateTime.Today.ToString("yyyy-MM-dd");
-            var mevcutKalori = await _dbService.GetGunlukYakilanKaloriAsync(tarihStr);
-            
+            var mevcutKalori =
+                await _dbService.GetGunlukYakilanKaloriAsync(tarihStr);
+
             if (mevcutKalori > 0)
             {
-                _hesaplananKalori = mevcutKalori;
                 LabelYakilanKalori.Text = mevcutKalori.ToString("F0");
                 FrameSonuc.IsVisible = true;
                 BtnKaydet.IsVisible = false;
@@ -38,14 +38,17 @@ namespace FinalProject
 
         private async void OnHesaplaClicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(EntryAdimSayisi.Text) || 
-                !int.TryParse(EntryAdimSayisi.Text, out int adimSayisi) || 
+            if (string.IsNullOrWhiteSpace(EntryAdimSayisi.Text) ||
+                !int.TryParse(EntryAdimSayisi.Text, out int adimSayisi) ||
                 adimSayisi <= 0)
             {
-                await DisplayAlert("Uyarı", "Lütfen geçerli bir adım sayısı girin.", "Tamam");
+                await DisplayAlert(
+                    "Uyarı",
+                    "Lütfen geçerli bir adım sayısı girin.",
+                    "Tamam");
                 return;
             }
-            
+
             _hesaplananKalori = (adimSayisi / 1000.0) * 50;
 
             LabelYakilanKalori.Text = _hesaplananKalori.ToString("F0");
@@ -57,26 +60,24 @@ namespace FinalProject
         {
             var tarihStr = DateTime.Today.ToString("yyyy-MM-dd");
             
-            await _dbService.DeleteYakilanKaloriAsync(tarihStr);
-            
             var yakilanKalori = new YakilanKalori
             {
                 Tarih = tarihStr,
                 Kalori = _hesaplananKalori,
                 EklenmeTarihi = DateTime.Now
             };
-            
+
             await _dbService.SaveYakilanKaloriAsync(yakilanKalori);
-            
+
             await _anaSayfaPage.VerileriYukle();
             await _anaSayfaPage.HaftalikGrafigeCiz();
-            
-            await DisplayAlert("Başarılı", 
-                $"{_hesaplananKalori:F0} kalori başarıyla kaydedildi!", 
+
+            await DisplayAlert(
+                "Başarılı",
+                $"{_hesaplananKalori:F0} kalori eklendi!",
                 "Tamam");
-            
+
             BtnKaydet.IsVisible = false;
-            
             await Navigation.PopAsync();
         }
     }

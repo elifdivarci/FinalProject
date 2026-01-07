@@ -9,7 +9,7 @@
             Padding="30"
             Spacing="25">
             <Label 
-                Text="Deneme Uygulaması"
+                Text="Kullanıcı Bilgileri"
                 FontSize="32"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"

@@ -15,7 +15,7 @@
                    HorizontalOptions="Center"
                    Margin="0,20,0,20"/>
             
-            <Image Source="profile_icon.png"
+            <Image Source="kosan_adam.png"
                    WidthRequest="120"
                    HeightRequest="120"
                    HorizontalOptions="Center"
@@ -35,7 +35,7 @@
                            Placeholder="Örn: 10000"
                            Keyboard="Numeric"
                            FontSize="18"
-                           BackgroundColor="#F5F5F5"
+                           BackgroundColor="White"
                            PlaceholderColor="#95A5A6"
                            HeightRequest="50"/>
                     
@@ -63,7 +63,7 @@
                            Text="0"
                            FontSize="48"
                            FontAttributes="Bold"
-                           TextColor="#E74C3C"
+                           TextColor="LightCoral"
                            HorizontalOptions="Center"/>
                     
                     <Label Text="kalori"
@@ -76,7 +76,7 @@
             <Button Text="Hesapla"
                     FontSize="20"
                     FontAttributes="Bold"
-                    BackgroundColor="#E74C3C"
+                    BackgroundColor="LightCoral"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="55"
@@ -87,7 +87,7 @@
                     Text="Kaydet"
                     FontSize="20"
                     FontAttributes="Bold"
-                    BackgroundColor="#27AE60"
+                    BackgroundColor="LimeGreen"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="55"
